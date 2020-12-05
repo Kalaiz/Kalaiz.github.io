@@ -1,14 +1,15 @@
 import kotlinx.browser.document
+import kotlinx.css.header
+import react.RBuilder
 import react.dom.h1
-
-
 import react.dom.render
 
-fun main() {
 
+fun main() {
     render(document.getElementById("root")) {
-        h1 {
-            +"Hello, React+Kotlin/JS!"
-        }
+        child(App::class) {}
     }
+
+
+
 }

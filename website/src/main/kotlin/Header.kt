@@ -8,4 +8,7 @@ class Header: RComponent<RProps, RState>()  {
     override fun RBuilder.render() {
         h1{+"Header"}
     }
+
+
 }
+

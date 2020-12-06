@@ -1,9 +1,15 @@
+import java.nio.file.Files.move
+
 plugins {
     id("org.jetbrains.kotlin.js") version "1.4.10"
 }
 
 group = "com.kalai"
 version = "1.0-SNAPSHOT"
+
+
+
+
 
 repositories {
     maven { setUrl("https://dl.bintray.com/kotlin/kotlin-eap") }
@@ -30,6 +36,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
 }
 
+
 kotlin {
     js {
         browser {
@@ -49,5 +56,13 @@ kotlin {
             }
         }
         binaries.executable()
+
     }
+}
+
+task("copyOutputToDocs"){
+    val outputFolder = File("build/distributions")
+    val docFolder = File("../docs")
+    outputFolder.copyRecursively(docFolder,true)
+
 }

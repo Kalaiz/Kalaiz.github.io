@@ -62,7 +62,8 @@ kotlin {
 
 task("copyOutputToDocs"){
     val outputFolder = File("build/distributions")
-    val docFolder = File("../Docs")
+    val docFolder = File("../docs")
+    if(outputFolder.exists())
     outputFolder.copyRecursively(docFolder,true)
 
 }

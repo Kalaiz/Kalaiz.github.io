@@ -1,4 +1,4 @@
-# [My Personal Website](kalaiz.github.io)
+# [My Personal Website](https://kalaiz.github.io/)
 ![Status](https://img.shields.io/badge/status-work--in--progress-red)
 
 ## Table of Content:

@@ -1,32 +1,35 @@
-
 import kotlinx.css.*
 import kotlinx.css.properties.*
 import kotlinx.css.properties.IterationCount.Companion.infinite
-import org.w3c.dom.svg.SVGLinearGradientElement
+import react.RBuilder
 import react.RComponent
 import react.RProps
 import react.RState
-import react.RBuilder
-import react.dom.html
-import styled.*
-
+import react.dom.h1
+import styled.css
+import styled.injectGlobal
+import styled.keyframes
+import styled.styledDiv
 import kotlin.random.Random
 
 const val TOP = 2000
 
-class App:RComponent<RProps,RState>() {
+class MovingBackGround:RComponent<RProps,RState>() {
 
 private val boxShadowsSmall: BoxShadows by lazy { getBoxShadows(500, Color.antiqueWhite)}
-    private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.white)}
+private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.white)}
+
+
 
 
     override fun RBuilder.render() {
 
         styledDiv{
+
             styledDiv{
                 css {
-                    width= 2.px
-                    height= 2.px
+                    width= 0.5.px
+                    height= 0.5.px
                     borderRadius= 50.pct
                     background= "transparent"
                     boxShadow = boxShadowsSmall
@@ -35,18 +38,19 @@ private val boxShadowsSmall: BoxShadows by lazy { getBoxShadows(500, Color.antiq
                             content= QuotedString(" ")
                             position=Position.absolute
                             top=TOP.px
-                            width= 1.5.px
-                            height= 1.5.px
+                            width= 0.5.px
+                            height= 0.5.px
                             borderRadius = 50.pct
                             background = "transparent"
                             boxShadow=boxShadowsSmall
                         }
                 }
             }
+
             styledDiv{
                 css{
-                    width= 3.px
-                    height= 3.px
+                    width= 3.25.px
+                    height= 3.25.px
                     borderRadius= 50.pct
                     background= "transparent"
                     boxShadow = boxShadowsMedium
@@ -55,8 +59,8 @@ private val boxShadowsSmall: BoxShadows by lazy { getBoxShadows(500, Color.antiq
                         content= QuotedString(" ")
                         position=Position.absolute
                         top=TOP.px
-                        width= 3.px
-                        height= 3.px
+                        width= 3.25.px
+                        height= 3.25.px
                         borderRadius = 50.pct
                         background = "transparent"
                         boxShadow=boxShadowsMedium
@@ -69,7 +73,6 @@ private val boxShadowsSmall: BoxShadows by lazy { getBoxShadows(500, Color.antiq
 
             }
 
-
             /* For Animation*/
             injectGlobal("  @keyframes animStar {\n" +
                     "    from {\n" +
@@ -81,7 +84,6 @@ private val boxShadowsSmall: BoxShadows by lazy { getBoxShadows(500, Color.antiq
                     "    }\n" +
                     "  }")
           }
-
 
     }
 

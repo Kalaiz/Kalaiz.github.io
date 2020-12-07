@@ -1,45 +1,48 @@
 import kotlinx.browser.document
 import kotlinx.css.*
-import kotlinx.css.properties.transform
-import kotlinx.css.properties.translate
-import react.dom.h1
+import org.w3c.dom.svg.SVGRadialGradientElement
 import react.dom.render
 import styled.css
 import styled.injectGlobal
 import styled.styledH1
 
-
+const val ellipseColor = "#37577d"
+const val backgroundBaseColor = "#162157"
 fun main() {
-    injectGlobal(" html {\n" +
-            "  height: 100%;\n" +
-            "  background: radial-gradient(ellipse at bottom, #37577d 30%, #162157 100%);\n" +
-            "  overflow: hidden;\n" +
-            "}")
 
-
-    render(document.getElementById("root")) {
-
-        styledH1{
-            +"Hi! I am Kalai."
-
-            css{
-                color= Color.whiteSmoke
-                fontFamily= "Courier New"
-                position = Position.absolute
-                top=40.pct
-                left=0.px
-                right=0.px
-                textAlign=TextAlign.center
-
-            }
+    val htmlTagCSSBuilder = CSSBuilder()
+    htmlTagCSSBuilder.apply {
+        html {
+            height = 100.pct
+            background = "radial-gradient(ellipse at bottom, $ellipseColor 30%, $backgroundBaseColor 100%)"
+            overflowY = Overflow.auto
         }
-        child(App::class) {}
-
-
     }
 
+    injectGlobal(htmlTagCSSBuilder.toString())
 
+    render(document.getElementById("root")) {
+        styledH1 {
+            +"Hi! I am Kalai."
+            css {
+                color = Color.whiteSmoke
+                fontFamily = "Courier New"
+                position = Position.absolute
+                top = 40.pct
+                left = 0.px
+                right = 0.px
+                textAlign = TextAlign.center
+            }
+        }
+
+        child(MovingBackGround::class) {}
+
+    }
 }
+
+
+
+
 
 
 

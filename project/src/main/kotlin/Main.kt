@@ -45,7 +45,7 @@ fun main() {
                         +"Hi! I am Kalai."
                         css {
                             fontWeight= FontWeight.bold
-                            fontSize= 5.5.vw
+                            fontSize= 8.vmin
                             color = Color.whiteSmoke
                             fontFamily = "Courier New"
                             textAlign=TextAlign.center

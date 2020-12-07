@@ -5,13 +5,16 @@ import react.RBuilder
 import react.RComponent
 import react.RProps
 import react.RState
+import styled.ReactModule
 import styled.css
 import styled.styledDiv
 import styled.styledP
 
 
 class Contact: RComponent<RProps, RState>() {
+
     override fun RBuilder.render() {
+
        val boxShadowsContact = BoxShadows()
            .apply{plusAssign(BoxShadow(false,3.px,3.px,5.px,5.px, Color.black)) }
 
@@ -21,7 +24,7 @@ class Contact: RComponent<RProps, RState>() {
                css{
                    color=Color.whiteSmoke
                    fontWeight= FontWeight.bold
-                   fontSize = 3.5.vw
+                   fontSize = 3.5.vmin
                }
             }
             css {

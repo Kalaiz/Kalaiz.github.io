@@ -16,11 +16,8 @@ const val TOP = 2000
 
 class MovingBackGround:RComponent<RProps,RState>() {
 
-private val boxShadowsSmall: BoxShadows by lazy { getBoxShadows(500, Color.antiqueWhite)}
+private val boxShadowsSmall: BoxShadows by lazy { getBoxShadows(550, Color.antiqueWhite)}
 private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.white)}
-
-
-
 
     override fun RBuilder.render() {
 
@@ -28,8 +25,8 @@ private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.whit
 
             styledDiv{
                 css {
-                    width= 0.5.px
-                    height= 0.5.px
+                    width= 0.35.px
+                    height= 0.35.px
                     borderRadius= 50.pct
                     background= "transparent"
                     boxShadow = boxShadowsSmall
@@ -38,8 +35,8 @@ private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.whit
                             content= QuotedString(" ")
                             position=Position.absolute
                             top=TOP.px
-                            width= 0.5.px
-                            height= 0.5.px
+                            width= 0.35.px
+                            height= 0.35.px
                             borderRadius = 50.pct
                             background = "transparent"
                             boxShadow=boxShadowsSmall

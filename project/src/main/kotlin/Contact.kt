@@ -5,25 +5,31 @@ import react.RBuilder
 import react.RComponent
 import react.RProps
 import react.RState
-import react.dom.p
 import styled.css
 import styled.styledDiv
-
+import styled.styledP
 
 
 class Contact: RComponent<RProps, RState>() {
     override fun RBuilder.render() {
-//        val boxShadowsContact = BoxShadows().plusAssign(BoxShadow(false,))
+       val boxShadowsContact = BoxShadows()
+           .apply{plusAssign(BoxShadow(false,3.px,3.px,5.px,5.px, Color.black)) }
+
         styledDiv {
-            p{
+           styledP{
                 +"Contact ........................"
+               css{
+                   color=Color.whiteSmoke
+                   fontWeight= FontWeight.bold
+                   fontSize = 3.5.vw
+               }
             }
             css {
                 padding(0.px,5.pct)
-                borderRadius= 25.px
+                borderRadius= 20.px
+                boxShadow=boxShadowsContact
                 height = LinearDimension.fitContent
-                width= LinearDimension.fitContent
-                background= Color.aqua.toString()
+                background= Color.darkSlateGray.toString()
             }
         }
     }

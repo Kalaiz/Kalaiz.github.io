@@ -17,11 +17,10 @@ class Contact: RComponent<RProps, RState>() {
 
     private val contactIconLink = linkedStringMapOf("linkedin" to "https://www.linkedin.com/in/skalaiarasan/","stack-overflow" to "https://stackoverflow.com/users/11200630/kalai?tab=profile","github" to "https://github.com/Kalaiz","email" to "mailto:ssokalai@gmail.com","resume" to "https://drive.google.com/file/d/1h3_0yM2sqoSTaD789qUPQd4jOCj3pQdv/view?usp=sharing")
     override fun RBuilder.render() {
-
         val boxShadowsContact = BoxShadows()
             .apply{plusAssign(BoxShadow(false,3.px,3.px,5.px,5.px, Color.black)) }
-        styledDiv {
 
+        styledDiv {
             for ((icon,link) in contactIconLink){
                 styledImg {
                     attrs{
@@ -31,9 +30,12 @@ class Contact: RComponent<RProps, RState>() {
                         }
                     }
                     css{
+                        /*Pop up animation*/
                         transition("all",.2.s, Timing.ease)
                         hover {
-                            transform{ translateY((-0.75).vmin)}
+                            transform{ translateY((-0.75).vmin)
+                            scale(1.10)
+                            }
                         }
                         filter="brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(8deg) brightness(105%) contrast(101%)"
                         width= LinearDimension.auto
@@ -45,7 +47,7 @@ class Contact: RComponent<RProps, RState>() {
             }
 
             css {
-                marginTop=4.vmin
+                marginTop=4.vmin // Some spacing
                 padding(vertical = 3.vmin,horizontal = 2.vmin)
                 borderRadius= 10.vmin
                 boxShadow=boxShadowsContact
@@ -54,6 +56,4 @@ class Contact: RComponent<RProps, RState>() {
             }
         }
     }
-
-
 }

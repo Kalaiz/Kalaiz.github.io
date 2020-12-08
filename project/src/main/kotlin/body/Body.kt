@@ -12,21 +12,21 @@ class Body: RComponent<RProps, RState>()  {
     override fun RBuilder.render() {
         styledDiv {
             css{
-                width =100.pct
+                width = 100.pct
                 position= Position.absolute
-                top=30.pct
+                top = 27.5.pct
                 alignContent= Align.center
             }
             styledDiv {
                 css{
-                    width =100.pct
-                    display= Display.flex
-                    flexDirection= FlexDirection.column
-                    alignItems= Align.center
+                    width = 100.pct
+                    display = Display.flex
+                    flexDirection = FlexDirection.column
+                    alignItems = Align.center
                 }
+
                 child(StarterContent::class){}
                 child(Contact::class) {}
-
             }
         }
     }

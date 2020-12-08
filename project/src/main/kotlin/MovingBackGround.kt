@@ -5,10 +5,8 @@ import react.RBuilder
 import react.RComponent
 import react.RProps
 import react.RState
-import react.dom.h1
 import styled.css
 import styled.injectGlobal
-import styled.keyframes
 import styled.styledDiv
 import kotlin.random.Random
 
@@ -20,9 +18,7 @@ private val boxShadowsSmall: BoxShadows by lazy { getBoxShadows(550, Color.antiq
 private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.white)}
 
     override fun RBuilder.render() {
-
         styledDiv{
-
             styledDiv{
                 css {
                     width= 0.01.vmin
@@ -62,9 +58,7 @@ private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.whit
                         background = "transparent"
                         boxShadow=boxShadowsMedium
                     }
-
                 }
-
             }
 
 
@@ -79,18 +73,16 @@ private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.whit
                     "    }\n" +
                     "  }")
           }
-
     }
 
 
+    private fun getRandomInt(until:Int):LinearDimension = Random.nextInt(until).px
 
 
-
-
-    private fun getRandomInt(until:Int):LinearDimension= Random.nextInt(until).px
-
-
-
+    /**
+     * Returns the boxShadows based on @param n
+     * @param n Number of stars
+     * */
     private fun getBoxShadows(n:Int,color:Color): BoxShadows {
         val boxShadows = BoxShadows()
         for (i in  0..n){
@@ -102,10 +94,6 @@ private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.whit
             )
         }
         return boxShadows
-    }
-
-    private fun getRandomColor(){
-        /*TODO */
     }
 
 }

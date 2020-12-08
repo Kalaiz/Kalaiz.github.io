@@ -25,8 +25,8 @@ private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.whit
 
             styledDiv{
                 css {
-                    width= 0.15.px
-                    height= 0.15.px
+                    width= 0.01.vmin
+                    height= 0.01.vmin
                     borderRadius= 50.pct
                     background= "transparent"
                     boxShadow = boxShadowsSmall
@@ -35,8 +35,8 @@ private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.whit
                             content= QuotedString(" ")
                             position=Position.absolute
                             top=TOP.px
-                            width= 0.15.px
-                            height= 0.15.px
+                            width= 0.01.vmin
+                            height= 0.01.vmin
                             borderRadius = 50.pct
                             background = "transparent"
                             boxShadow=boxShadowsSmall
@@ -46,8 +46,8 @@ private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.whit
 
             styledDiv{
                 css{
-                    width= 3.25.px
-                    height= 3.25.px
+                    width= 0.25.vmin
+                    height= 0.25.vmin
                     borderRadius= 50.pct
                     background= "transparent"
                     boxShadow = boxShadowsMedium
@@ -56,8 +56,8 @@ private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.whit
                         content= QuotedString(" ")
                         position=Position.absolute
                         top=TOP.px
-                        width= 3.25.px
-                        height= 3.25.px
+                        width= 0.25.vmin
+                        height= 0.25.vmin
                         borderRadius = 50.pct
                         background = "transparent"
                         boxShadow=boxShadowsMedium
@@ -96,8 +96,8 @@ private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.whit
         for (i in  0..n){
             boxShadows.plusAssign(
                 BoxShadow(false,
-                    getRandomInt(2000),
-                    getRandomInt(2000),
+                    getRandomInt(TOP),
+                    getRandomInt(TOP),
                     0.px,1.px, color)
             )
         }

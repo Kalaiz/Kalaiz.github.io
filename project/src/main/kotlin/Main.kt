@@ -13,7 +13,7 @@ fun main() {
         html {
             height = 100.pct
             background =  backgroundBaseColor
-            overflowY = Overflow.scroll
+            overflowY = Overflow.hidden
             overflowX=Overflow.hidden
 
         }

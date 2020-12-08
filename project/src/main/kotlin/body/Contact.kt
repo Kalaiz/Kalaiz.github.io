@@ -45,7 +45,8 @@ class Contact: RComponent<RProps, RState>() {
             }
 
             css {
-                padding(vertical = 2.vmin,horizontal = 2.vmin)
+                marginTop=4.vmin
+                padding(vertical = 3.vmin,horizontal = 2.vmin)
                 borderRadius= 10.vmin
                 boxShadow=boxShadowsContact
                 height = LinearDimension.fitContent

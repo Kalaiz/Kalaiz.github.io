@@ -16,6 +16,7 @@ A simple portfolio website built via Kotlin. The challenge is to write majority 
 - Kotlin React,CSS,Styled [Wrappers](https://github.com/JetBrains/kotlin-wrappers)
 - Kotlin: Delegate Properties, lambda functions,Standard Higher order functions, Class References
 - Chrome: For Viewing and Debugging
+- To convert transparent images to a certain color https://codepen.io/sosuke/pen/Pjoqqp
 
 
 ### ✍️ Reflection:

@@ -17,14 +17,14 @@ class Footer: RComponent<RProps, RState>()  {
                 bottom=0.px
                 display= Display.flex
                 flexDirection=FlexDirection.rowReverse
-                height=5.pct
+                height=5.vmin
             }
             styledDiv {
                 css{
                     width=15.pct
                     display=Display.flex
                     alignItems=Align.center
-                    }
+                }
 
                 styledSpan {
                     +"Built by myself using"

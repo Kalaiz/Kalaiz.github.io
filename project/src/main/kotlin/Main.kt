@@ -14,10 +14,8 @@ fun main() {
     val htmlTagCSSBuilder = CSSBuilder()
     htmlTagCSSBuilder.apply {
         html {
-            height = 100.pct
             background =  backgroundBaseColor
-            overflowY = Overflow.hidden
-            overflowX= Overflow.hidden
+            overflow= Overflow.hidden
         }
     }
     injectGlobal(htmlTagCSSBuilder.toString())

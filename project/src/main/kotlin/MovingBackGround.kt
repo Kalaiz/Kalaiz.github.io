@@ -25,8 +25,8 @@ private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.whit
 
             styledDiv{
                 css {
-                    width= 0.35.px
-                    height= 0.35.px
+                    width= 0.15.px
+                    height= 0.15.px
                     borderRadius= 50.pct
                     background= "transparent"
                     boxShadow = boxShadowsSmall
@@ -35,8 +35,8 @@ private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.whit
                             content= QuotedString(" ")
                             position=Position.absolute
                             top=TOP.px
-                            width= 0.35.px
-                            height= 0.35.px
+                            width= 0.15.px
+                            height= 0.15.px
                             borderRadius = 50.pct
                             background = "transparent"
                             boxShadow=boxShadowsSmall
@@ -66,9 +66,7 @@ private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.whit
                 }
 
             }
-            styledDiv{
 
-            }
 
             /* For Animation*/
             injectGlobal("  @keyframes animStar {\n" +

@@ -21,6 +21,7 @@ class StarterContent: RComponent<RProps, RState>() {
                     fontSize = 9.5.vmin
                     fontFamily = "\"Lucida Console\", \"Courier New\", monospace"
                     marginBottom = 0.px
+                    put("text-shadow","0.70vmin 0.70vmin ${Color.black.value}")
                     +ComponentStyles.content
                 }
             }
@@ -31,6 +32,7 @@ class StarterContent: RComponent<RProps, RState>() {
                     fontWeight= FontWeight.bold
                     fontSize= 2.5.vmin
                     fontFamily = "system-ui"
+                    put("text-shadow","0.5vmin 0.5vmin ${Color.black.value}")
                     +ComponentStyles.content
                 }
             }

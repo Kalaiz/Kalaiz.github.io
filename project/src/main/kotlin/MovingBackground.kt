@@ -19,7 +19,7 @@ class MovingBackground:RComponent<RProps,RState>() {
         val top = window.innerHeight*4
         styledDiv{
             styledDiv{
-                val boxShadowsSmall = getBoxShadows((window.innerHeight * window.innerWidth)/500, Color.antiqueWhite, window.innerWidth* 4, window.innerHeight* 4 )
+                val boxShadowsSmall = getBoxShadows((window.innerHeight * window.innerWidth)/750, Color.antiqueWhite, window.innerWidth* 4, window.innerHeight* 4 )
                 css {
                     + ComponentStyles.smallStarDim
                     + ComponentStyles.star
@@ -36,7 +36,7 @@ class MovingBackground:RComponent<RProps,RState>() {
             }
 
             styledDiv{
-                val boxShadowsMedium = getBoxShadows((window.innerHeight * window.innerWidth)/1000, Color.white , window.innerWidth * 4, window.innerHeight * 4)
+                val boxShadowsMedium = getBoxShadows((window.innerHeight * window.innerWidth)/1250, Color.white , window.innerWidth * 4, window.innerHeight * 4)
                 css{
                     + ComponentStyles.medStarDim
                     + ComponentStyles.star

@@ -22,7 +22,6 @@ object ComponentStyles : StyleSheet("CommonStyles") {
     }
 
     val content by css{
-        put("text-shadow","5px 5px ${Color.black.value}")
         textAlign= TextAlign.center
         color = Color.whiteSmoke
         height= LinearDimension.fitContent

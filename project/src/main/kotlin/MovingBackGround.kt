@@ -1,3 +1,4 @@
+import kotlinx.browser.window
 import kotlinx.css.*
 import kotlinx.css.properties.*
 import kotlinx.css.properties.IterationCount.Companion.infinite
@@ -10,57 +11,46 @@ import styled.injectGlobal
 import styled.styledDiv
 import kotlin.random.Random
 
-const val TOP = 2000
+
 
 class MovingBackGround:RComponent<RProps,RState>() {
 
-private val boxShadowsSmall: BoxShadows by lazy { getBoxShadows(550, Color.antiqueWhite)}
-private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.white)}
-
     override fun RBuilder.render() {
+        val top = window.innerHeight*4
         styledDiv{
             styledDiv{
+                val boxShadowsSmall = getBoxShadows((window.innerHeight * window.innerWidth)/750, Color.antiqueWhite, window.innerWidth* 4, window.innerHeight* 4 )
                 css {
-                    width= 0.01.vmin
-                    height= 0.01.vmin
-                    borderRadius= 50.pct
-                    background= "transparent"
+                    + ComponentStyles.smallStarDim
+                    + ComponentStyles.star
                     boxShadow = boxShadowsSmall
-                   animation("animStar", 250.s, Timing.linear,iterationCount = infinite)
-                        after {
-                            content= QuotedString(" ")
-                            position=Position.absolute
-                            top=TOP.px
-                            width= 0.01.vmin
-                            height= 0.01.vmin
-                            borderRadius = 50.pct
-                            background = "transparent"
-                            boxShadow=boxShadowsSmall
-                        }
-                }
-            }
-
-            styledDiv{
-                css{
-                    width= 0.25.vmin
-                    height= 0.25.vmin
-                    borderRadius= 50.pct
-                    background= "transparent"
-                    boxShadow = boxShadowsMedium
-                    animation("animStar", 400.s, Timing.linear,iterationCount = infinite)
+                    animation("animStar", 250.s, Timing.linear,iterationCount = infinite)
                     after {
-                        content= QuotedString(" ")
-                        position=Position.absolute
-                        top=TOP.px
-                        width= 0.25.vmin
-                        height= 0.25.vmin
-                        borderRadius = 50.pct
-                        background = "transparent"
-                        boxShadow=boxShadowsMedium
+                        position = Position.absolute
+                        this.top = top.px
+                        + ComponentStyles.smallStarDim
+                        + ComponentStyles.star
+                        boxShadow = boxShadowsSmall
                     }
                 }
             }
 
+            styledDiv{
+                val boxShadowsMedium = getBoxShadows((window.innerHeight * window.innerWidth)/1250, Color.white , window.innerWidth * 4, window.innerHeight * 4)
+                css{
+                    + ComponentStyles.medStarDim
+                    + ComponentStyles.star
+                    boxShadow = boxShadowsMedium
+                    animation("animStar", 400.s, Timing.linear,iterationCount = infinite)
+                    after {
+                        position=Position.absolute
+                        this.top =top.px
+                        + ComponentStyles.medStarDim
+                        + ComponentStyles.star
+                        boxShadow=boxShadowsMedium
+                    }
+                }
+            }
 
             /* For Animation*/
             injectGlobal("  @keyframes animStar {\n" +
@@ -69,11 +59,13 @@ private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.whit
                     "    }\n" +
                     "  \n" +
                     "    to {\n" +
-                    "      transform: translateY(${-TOP}px);\n" +
+                    "      transform: translateY(${-top}px);\n" +
                     "    }\n" +
                     "  }")
-          }
+        }
     }
+
+
 
 
     private fun getRandomInt(until:Int):LinearDimension = Random.nextInt(until).px
@@ -83,17 +75,16 @@ private val boxShadowsMedium: BoxShadows by lazy { getBoxShadows(100, Color.whit
      * Returns the boxShadows based on @param n
      * @param n Number of stars
      * */
-    private fun getBoxShadows(n:Int,color:Color): BoxShadows {
+    private fun getBoxShadows(n:Int,color:Color,width:Int,height:Int): BoxShadows {
         val boxShadows = BoxShadows()
         for (i in  0..n){
             boxShadows.plusAssign(
                 BoxShadow(false,
-                    getRandomInt(TOP),
-                    getRandomInt(TOP),
+                    getRandomInt(width),
+                    getRandomInt(height),
                     0.px,1.px, color)
             )
         }
         return boxShadows
     }
-
 }

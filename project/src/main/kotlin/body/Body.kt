@@ -12,9 +12,9 @@ class Body: RComponent<RProps, RState>()  {
     override fun RBuilder.render() {
         styledDiv {
             css{
-                width = 100.pct
-                position= Position.absolute
-                top = 27.5.pct
+                width = 100.vw
+                position= Position.fixed
+                top = 27.5.vh
                 alignContent= Align.center
             }
             styledDiv {

@@ -15,7 +15,7 @@ fun main() {
     htmlTagCSSBuilder.apply {
         html {
             background =  backgroundBaseColor
-            overflow= Overflow.hidden
+            overflow = Overflow.hidden
         }
     }
     injectGlobal(htmlTagCSSBuilder.toString())

@@ -19,30 +19,23 @@ class StarterContent: RComponent<RProps, RState>() {
                 css {
                     fontWeight= FontWeight.bold
                     fontSize= 9.5.vmin
-                    color = Color.whiteSmoke
                     fontFamily = "Courier New"
-                    textAlign= TextAlign.center
-                    height= LinearDimension.fitContent
                     marginBottom=0.px
-                    put("text-shadow","5px 5px ${Color.black.value}")
+                    +ComponentStyles.content
                 }
             }
 
             styledH1 {
                 +"Software Engineering Student | Android | Linux "
-
                 css {
                     fontWeight= FontWeight.bolder
                     fontSize= 2.5.vmin
-                    color = Color.whiteSmoke
                     fontFamily = "system-ui"
-                    textAlign= TextAlign.center
-                    height= LinearDimension.fitContent
-                    put("text-shadow","5px 5px ${Color.black.value}")
+                    +ComponentStyles.content
                 }
             }
             css{
-                marginBottom=2.vmin
+                marginBottom=2.vmin // Some spacing
             }
         }
     }

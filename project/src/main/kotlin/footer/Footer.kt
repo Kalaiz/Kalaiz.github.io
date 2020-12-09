@@ -12,18 +12,18 @@ class Footer: RComponent<RProps, RState>()  {
     override fun RBuilder.render() {
         styledFooter {
             css{
-                position = Position.absolute
-                width=100.pct
-                bottom=0.px
-                display= Display.flex
-                flexDirection=FlexDirection.rowReverse
-                height=5.vmin
+                position = Position.fixed
+                width = 100.vw
+                display = Display.flex
+                flexDirection = FlexDirection.rowReverse
+                bottom = 1.vmin
+                height= 2.vmin
             }
             styledDiv {
                 css{
-                    width=15.pct
-                    display=Display.flex
-                    alignItems=Align.center
+                    width = 20.pct
+                    display = Display.flex
+                    alignItems = Align.center
                 }
 
                 styledSpan {
@@ -31,17 +31,18 @@ class Footer: RComponent<RProps, RState>()  {
                     css {
                         fontWeight = FontWeight.bolder
                         color = Color.white
-                        fontFamily= "system-ui"
-                        fontSize=1.vmin
-                        marginRight=0.5.vmin
+                        fontFamily = "system-ui"
+                        fontSize = 1.vmin
+                        marginRight = 0.5.vmin
+
                     }
                 }
                 styledImg {
                     attrs { src="images/kotlin.png" }
                     css{
-                        maxWidth= 20.pct
-                        maxHeight = 20.pct
-                        filter="brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(8deg) brightness(105%) contrast(101%)"
+                        maxWidth = 50.pct
+                        maxHeight = 50.pct
+                        +ComponentStyles.tint
                     }
                 }
             }

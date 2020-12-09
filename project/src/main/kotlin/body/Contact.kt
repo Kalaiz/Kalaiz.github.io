@@ -31,20 +31,24 @@ class Contact: RComponent<RProps, RState>() {
         styledDiv {
             for ((icon,link) in contactIconLink){
                 styledImg {
-                    attrs{
-                        src="/images/$icon.png"
-                        onClickFunction = {
-                            window.open(link)
-                        }
-                    }
+
                     css{
-                        /*Pop up animation*/
-                        transition("all",.2.s, Timing.ease)
-                        hover {
-                            transform{ translateY((-0.75).vmin)
-                                scale(1.10)
+                        /*Pop up animation; Hover doesn't work on Mobile devices*/
+                        media("(hover: hover) and (pointer: fine)") {
+                            transition("all",.2.s, Timing.ease)
+                            hover {
+                                transform{ translateY((-0.75).vmin)
+                                    scale(1.10)
+                                    attrs{
+                                        src="/images/$icon.png"
+                                        onClickFunction = {
+                                            window.open(link)
+                                        }
+                                    }
+                                }
                             }
                         }
+
                         +ComponentStyles.tint
                         width= LinearDimension.auto
                         height=7.vmin

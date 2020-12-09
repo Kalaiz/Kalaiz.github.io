@@ -21,7 +21,7 @@ fun main() {
     injectGlobal(htmlTagCSSBuilder.toString())
 
     render(document.getElementById("root")) {
-        child(MovingBackGround::class) {}
+        child(MovingBackground::class) {}
         child(Body::class){}
         child(Footer::class){}
     }

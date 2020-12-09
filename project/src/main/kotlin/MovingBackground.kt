@@ -13,7 +13,7 @@ import kotlin.random.Random
 
 
 
-class MovingBackGround:RComponent<RProps,RState>() {
+class MovingBackground:RComponent<RProps,RState>() {
 
     override fun RBuilder.render() {
         val top = window.innerHeight*4
@@ -24,7 +24,7 @@ class MovingBackGround:RComponent<RProps,RState>() {
                     + ComponentStyles.smallStarDim
                     + ComponentStyles.star
                     boxShadow = boxShadowsSmall
-                    animation("animStar", 250.s, Timing.linear,iterationCount = infinite)
+                    animation("animStar", 450.s, Timing.linear,iterationCount = infinite)
                     after {
                         position = Position.absolute
                         this.top = top.px
@@ -41,7 +41,7 @@ class MovingBackGround:RComponent<RProps,RState>() {
                     + ComponentStyles.medStarDim
                     + ComponentStyles.star
                     boxShadow = boxShadowsMedium
-                    animation("animStar", 400.s, Timing.linear,iterationCount = infinite)
+                    animation("animStar", 650.s, Timing.linear,iterationCount = infinite)
                     after {
                         position=Position.absolute
                         this.top =top.px

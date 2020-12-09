@@ -8,8 +8,8 @@ object ComponentStyles : StyleSheet("CommonStyles") {
    }
 
     val medStarDim by css{
-        width = 0.2.vmin
-        height = 0.2.vmin
+        width = 0.215.vmin
+        height = 0.215.vmin
     }
 
     val smallStarDim by css{

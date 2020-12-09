@@ -17,10 +17,10 @@ class StarterContent: RComponent<RProps, RState>() {
             styledH1 {
                 +"Hi! I am Kalai."
                 css {
-                    fontWeight= FontWeight.bold
-                    fontSize= 9.5.vmin
-                    fontFamily = "Courier New"
-                    marginBottom=0.px
+                    fontWeight = FontWeight.bold
+                    fontSize = 9.5.vmin
+                    fontFamily = "\"Lucida Console\", \"Courier New\", monospace"
+                    marginBottom = 0.px
                     +ComponentStyles.content
                 }
             }
@@ -28,7 +28,7 @@ class StarterContent: RComponent<RProps, RState>() {
             styledH1 {
                 +"Software Engineering Student | Android | Linux "
                 css {
-                    fontWeight= FontWeight.bolder
+                    fontWeight= FontWeight.bold
                     fontSize= 2.5.vmin
                     fontFamily = "system-ui"
                     +ComponentStyles.content

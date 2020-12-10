@@ -40,8 +40,7 @@ class Footer: RComponent<RProps, RState>()  {
                 styledImg {
                     attrs { src="images/kotlin.png" }
                     css{
-                        maxWidth = 50.pct
-                        maxHeight = 50.pct
+                        maxHeight=1.05.vmin
                         +ComponentStyles.tint
                     }
                 }

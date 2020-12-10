@@ -40,7 +40,7 @@ class Contact: RComponent<RProps, RState>() {
                                 transform{ translateY((-0.75).vmin)
                                     scale(1.10)
                                     attrs{
-                                        src="/images/$icon.png"
+                                        src="images/$icon.png"
                                         onClickFunction = {
                                             window.open(link)
                                         }

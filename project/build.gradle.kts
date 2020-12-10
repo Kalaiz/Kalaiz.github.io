@@ -1,14 +1,9 @@
-import java.nio.file.Files.move
-
 plugins {
     id("org.jetbrains.kotlin.js") version "1.4.10"
 }
 
 group = "com.kalai"
 version = "1.0-SNAPSHOT"
-
-
-
 
 
 repositories {
@@ -63,6 +58,20 @@ task("copyOutputToDocs"){
     val outputFolder = File("build/distributions")
     val docFolder = File("../docs")
     if(outputFolder.exists())
-    outputFolder.copyRecursively(docFolder,true)
+        outputFolder.copyRecursively(docFolder,true)}
+
+task("runScreenshotScript"){
+    val workingDir = File("src/main")
+    ProcessBuilder("python3","screenshot_script.py")
+        .directory(workingDir)
+        .redirectOutput(ProcessBuilder.Redirect.INHERIT)
+        .redirectError(ProcessBuilder.Redirect.INHERIT)
+        .start()
+        .waitFor(15, TimeUnit.SECONDS)
 
 }
+
+
+
+
+

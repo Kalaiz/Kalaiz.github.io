@@ -25,5 +25,6 @@ fun main() {
         child(Body::class){}
         child(Footer::class){}
     }
+
 }
 

@@ -36,6 +36,7 @@ Everytime the project is built in the IDE, a screenshot of the webpage is taken 
 - [Hex Color Tool](https://codepen.io/sosuke/pen/Pjoqqp): Used to to produce filter attribute values, which convert a black color to a certain color. 
 - Used an unofficial python based Selenium [documentation](https://selenium-python.readthedocs.io/).
 - Gradle Task `runScreenshotScript`: Based on this Extension Function provided in this [answer](https://stackoverflow.com/a/41495542/11200630), which runs a process via kotlin ( So to run the python script from a command line perspective). This answer uses `ProcessBuilder` API from Java such that the subprocess I/O (outputs and errors in my case) source or destination will be the [same as those of the current process](https://docs.oracle.com/javase/7/docs/api/java/lang/ProcessBuilder.Redirect.html#INHERIT). 
+- **25/02/2021** Fixed the recent bluriness of stars caused  [chrome 88](https://developer.chrome.com/blog/new-in-chrome-88/) update, by adding `backface-visibility: hidden;` to the css animation as mentioned in this [blog](https://www.blackpepper.co.uk/blog/blurry-css-animations-in-chrome-try-this). 
 
 
 

@@ -52,14 +52,21 @@ class MovingBackground:RComponent<RProps,RState>() {
                 }
             }
 
-            /* For Animation*/
+            /* For Animation; 25/02/2021: Added backface-visibility:hidden which fixed blurriness
+            * https://www.blackpepper.co.uk/blog/blurry-css-animations-in-chrome-try-this
+            * */
+
+
+
             injectGlobal("  @keyframes animStar {\n" +
                     "    from {\n" +
+                    "      backface-visibility: hidden;;\n"+
                     "      transform: translateY(0px);\n" +
                     "    }\n" +
                     "  \n" +
                     "    to {\n" +
-                    "      transform: translateY(${-top}px);\n" +
+                    "       backface-visibility: hidden;;\n"+
+                    "       transform: translateY(${-top}px);\n" +
                     "    }\n" +
                     "  }")
         }

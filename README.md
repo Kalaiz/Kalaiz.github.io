@@ -11,7 +11,7 @@
 ### 📜 Description:
 A simple personal website built using Kotlin. The challenge is to write majority of HTML, CSS and JS code in Kotlin. 
 
-Everytime the project is built in the IDE, a screenshot of the webpage is taken with the help of my python script (uses Selenium)  and Gradle. The screenshots are being used as a [social media preview](https://css-tricks.com/essential-meta-tags-social-media/). 
+Everytime the project is built, a screenshot of the webpage is taken with the help of my python script (uses Selenium)  and Gradle. The screenshots are being used as a [social media preview](https://css-tricks.com/essential-meta-tags-social-media/). 
 
 <p align="center">
 <img src="/resources/website_overview.gif"/> 

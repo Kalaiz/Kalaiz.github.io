@@ -27,10 +27,10 @@ class StarterContent: RComponent<RProps, RState>() {
             }
 
             styledH1 {
-                +"Software Engineering Student | Android | Linux "
+                +"Interested in developing Fullstack web apps, Android apps and Data Engineering pipelines."
                 css {
                     fontWeight= FontWeight.bold
-                    fontSize= 2.5.vmin
+                    fontSize= 2.vmin
                     fontFamily = "system-ui"
                     put("text-shadow","0.5vmin 0.5vmin ${Color.black.value}")
                     +ComponentStyles.content
